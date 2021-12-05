@@ -129,6 +129,7 @@ namespace Prog_Lab3_5
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(667, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // button1
             // 
@@ -151,6 +152,7 @@ namespace Prog_Lab3_5
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.NextMatch);
             // 
             // splitContainer1
             // 

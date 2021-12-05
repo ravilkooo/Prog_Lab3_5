@@ -54,5 +54,20 @@ namespace Prog_Lab3_5
                 richTextBox2.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
             }
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                data.Find(textBox1.Text);
+                this.ShowMatch();
+                e.SuppressKeyPress = true; // дальше событие нажатие кнопки игнорируется
+            }
+        }
+        private void NextMatch(object sender, EventArgs e)
+        {
+            data.Next();
+            this.ShowMatch();
+        }
     }
 }

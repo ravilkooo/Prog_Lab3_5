@@ -27,5 +27,10 @@ namespace Prog_Lab3_5
         {
             this.Match = Regex.Match(this.Text, re);
         }
+
+        internal void Next()
+        {
+            this.Match = this.Match?.NextMatch();
+        }
     }
 }
