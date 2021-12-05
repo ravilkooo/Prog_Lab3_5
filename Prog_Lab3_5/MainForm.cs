@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prog_Lab3_5.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Prog_Lab3_5
         {
             InitializeComponent();
             this.data = new Data();
+            data.ReadFromFile(Settings.Default.DefaultFileName);
             richTextBox1.Text = data.Text;
         }
         private void OpenFile(object sender, EventArgs e)
@@ -28,15 +30,14 @@ namespace Prog_Lab3_5
             if (res == DialogResult.OK) // если не нажали отмену
             {
                 this.data.ReadFromFile(dlg.FileName);
+                richTextBox1.Text = data.Text;
             }
-
         }
         private void Find(object sender, EventArgs e)
         {
             data.Find(textBox1.Text);
             this.ShowMatch();
         }
-
         private void ShowMatch()
         {
             var m = data.Match;
@@ -54,7 +55,6 @@ namespace Prog_Lab3_5
                 richTextBox2.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
             }
         }
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -68,6 +68,11 @@ namespace Prog_Lab3_5
         {
             data.Next();
             this.ShowMatch();
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.DefaultFileName = data.FileName;
+            Settings.Default.Save();
         }
     }
 }

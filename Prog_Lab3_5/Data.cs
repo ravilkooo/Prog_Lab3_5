@@ -16,9 +16,13 @@ namespace Prog_Lab3_5
 
         internal void ReadFromFile(string fileName)
         {
-            using (StreamReader sr = new StreamReader(fileName))
+            if (fileName != "")
             {
-                Text = sr.ReadToEnd().Replace("\r", "");  //стандартный символ конца строки	
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    FileName = fileName;
+                    Text = sr.ReadToEnd().Replace("\r", "");  //стандартный символ конца строки	
+                }
             }
 
         }
