@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Prog_Lab3_5
@@ -11,7 +12,7 @@ namespace Prog_Lab3_5
     {
         public string Text;
         public string FileName;
-        System.Text.RegularExpressions.Match Match { get; set; }
+        public System.Text.RegularExpressions.Match Match { get; set; }
 
         internal void ReadFromFile(string fileName)
         {
@@ -20,6 +21,11 @@ namespace Prog_Lab3_5
                 Text = sr.ReadToEnd().Replace("\r", "");  //стандартный символ конца строки	
             }
 
+        }
+
+        internal void Find(string re)
+        {
+            this.Match = Regex.Match(this.Text, re);
         }
     }
 }

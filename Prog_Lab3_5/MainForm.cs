@@ -31,5 +31,28 @@ namespace Prog_Lab3_5
             }
 
         }
+        private void Find(object sender, EventArgs e)
+        {
+            data.Find(textBox1.Text);
+            this.ShowMatch();
+        }
+
+        private void ShowMatch()
+        {
+            var m = data.Match;
+            if (m != null && m.Success)
+            {
+                richTextBox1.SelectionBackColor = Color.White; // сброс подсветки
+                richTextBox1.SelectionStart = m.Index;
+                // начало - место, на котором
+                // в строке найдено регулярное выражение
+                richTextBox1.SelectionLength = m.Value.Length;
+                // длина найденного фрагмента
+                richTextBox1.ScrollToCaret(); // прокрутка на выделенное место
+                richTextBox1.SelectionBackColor = Color.Yellow; // подсветка
+
+                richTextBox2.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
+            }
+        }
     }
 }
