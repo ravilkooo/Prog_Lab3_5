@@ -19,7 +19,6 @@ namespace Prog_Lab3_5
 
             foreach (KeyValuePair<string, int> p in stats)
             {
-
                 dataGridView1.Rows.Add(new object[] { p.Key, p.Value });
             }
 

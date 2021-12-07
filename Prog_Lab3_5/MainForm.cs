@@ -102,10 +102,19 @@ namespace Prog_Lab3_5
             ISet<String> words = data.FindSentencesFirstWords();
             richTextBox2.Text = String.Join(", ", words);
         }
-
         private void statFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new StatisticsForm(data.FirstLetterCounts()).ShowDialog();
+        }
+
+        private void task13ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Text = "";
+            var sentences = data.FindFiveSentencesBiggestPunct();
+            foreach (var p in sentences)
+            {
+                richTextBox2.Text += $"{p.Item1} : {p.Item2}\n";
+            }
         }
     }
 }

@@ -72,6 +72,40 @@ namespace Prog_Lab3_5
             }
             return counts;
         }
-
+        public List<(int, string)> FindFiveSentencesBiggestPunct()
+        {
+            // ([A-Z].[^.!?]*[.!?])
+            List<(int, string)> counts = new List<(int, string)>();
+            for (int i = 0; i < 5; i++)
+            {
+                counts.Add((0, ""));
+            }
+            //SortedDictionary<string, int> counts = new SortedDictionary<string, int>();
+            Regex r = new Regex(@"([A-Z].[^.!?]*[.!?])");
+            foreach (Match m in r.Matches(this.Text))
+            {
+                string sent = m.Groups[1].Value;
+                int cp = CountPunct(sent);
+                if (cp > counts[4].Item1)
+                {
+                    counts[4] = (cp, sent);
+                    counts.Sort(CompareSentPunc);
+                }
+            }
+            return counts;
+        }
+        public int CountPunct(string s)
+        {
+            int res = 0;
+            foreach (Match m in Regex.Matches(s, @"[-.,?!:;""']"))
+            {
+                res++;
+            }
+            return res;
+        }
+        private static int CompareSentPunc((int, string) x, (int, string) y)
+        {
+            return y.Item1 - x.Item1;
+        }
     }
 }

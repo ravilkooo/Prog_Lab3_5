@@ -36,6 +36,7 @@ namespace Prog_Lab3_5
             this.ofOrClickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firstQstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.task13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -67,7 +68,8 @@ namespace Prog_Lab3_5
             this.поискToolStripMenuItem,
             this.ofOrClickToolStripMenuItem,
             this.firstQstWordToolStripMenuItem,
-            this.statFormToolStripMenuItem});
+            this.statFormToolStripMenuItem,
+            this.task13ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1042, 28);
@@ -116,6 +118,13 @@ namespace Prog_Lab3_5
             this.statFormToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.statFormToolStripMenuItem.Text = "StatForm";
             this.statFormToolStripMenuItem.Click += new System.EventHandler(this.statFormToolStripMenuItem_Click);
+            // 
+            // task13ToolStripMenuItem
+            // 
+            this.task13ToolStripMenuItem.Name = "task13ToolStripMenuItem";
+            this.task13ToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.task13ToolStripMenuItem.Text = "Task 13";
+            this.task13ToolStripMenuItem.Click += new System.EventHandler(this.task13ToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -298,5 +307,6 @@ namespace Prog_Lab3_5
         private System.Windows.Forms.ToolStripMenuItem ofOrClickToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem firstQstWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem task13ToolStripMenuItem;
     }
 }
