@@ -33,6 +33,9 @@ namespace Prog_Lab3_5
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofOrClickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.firstQstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,7 +64,10 @@ namespace Prog_Lab3_5
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьToolStripMenuItem,
-            this.поискToolStripMenuItem});
+            this.поискToolStripMenuItem,
+            this.ofOrClickToolStripMenuItem,
+            this.firstQstWordToolStripMenuItem,
+            this.statFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1042, 28);
@@ -79,7 +85,8 @@ namespace Prog_Lab3_5
             // открытьToolStripMenuItem1
             // 
             this.открытьToolStripMenuItem1.Name = "открытьToolStripMenuItem1";
-            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
+            this.открытьToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(203, 26);
             this.открытьToolStripMenuItem1.Text = "Открыть";
             this.открытьToolStripMenuItem1.Click += new System.EventHandler(this.OpenFile);
             // 
@@ -88,6 +95,27 @@ namespace Prog_Lab3_5
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
             this.поискToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.поискToolStripMenuItem.Text = "Поиск";
+            // 
+            // ofOrClickToolStripMenuItem
+            // 
+            this.ofOrClickToolStripMenuItem.Name = "ofOrClickToolStripMenuItem";
+            this.ofOrClickToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.ofOrClickToolStripMenuItem.Text = "OfOrClick";
+            this.ofOrClickToolStripMenuItem.Click += new System.EventHandler(this.ofOrClickToolStripMenuItem_Click);
+            // 
+            // firstQstWordToolStripMenuItem
+            // 
+            this.firstQstWordToolStripMenuItem.Name = "firstQstWordToolStripMenuItem";
+            this.firstQstWordToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.firstQstWordToolStripMenuItem.Text = "First qstn word";
+            this.firstQstWordToolStripMenuItem.Click += new System.EventHandler(this.firstQstWordToolStripMenuItem_Click);
+            // 
+            // statFormToolStripMenuItem
+            // 
+            this.statFormToolStripMenuItem.Name = "statFormToolStripMenuItem";
+            this.statFormToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.statFormToolStripMenuItem.Text = "StatForm";
+            this.statFormToolStripMenuItem.Click += new System.EventHandler(this.statFormToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -174,6 +202,7 @@ namespace Prog_Lab3_5
             // 
             // listBox1
             // 
+            this.listBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
@@ -266,5 +295,8 @@ namespace Prog_Lab3_5
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ofOrClickToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem firstQstWordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statFormToolStripMenuItem;
     }
 }
