@@ -12,7 +12,6 @@ namespace Prog_Lab3_5
 {
     public partial class StatisticsForm : Form
     {
-        //IDictionary<string, int> stats;
         public StatisticsForm(IDictionary<string, int> stats)
         {
             InitializeComponent();

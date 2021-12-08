@@ -38,10 +38,10 @@ namespace Prog_Lab3_5
         private void OpenFile(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // расширения
+            dlg.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             dlg.FilterIndex = 1;
-            DialogResult res = dlg.ShowDialog(); // показываем диалог и ждём ok или отмены
-            if (res == DialogResult.OK) // если не нажали отмену
+            DialogResult res = dlg.ShowDialog();
+            if (res == DialogResult.OK)
             {
                 this.data.ReadFromFile(dlg.FileName);
                 richTextBox1.Text = data.Text;
@@ -57,14 +57,13 @@ namespace Prog_Lab3_5
             var m = data.Match;
             if (m != null && m.Success)
             {
-                richTextBox1.SelectionBackColor = Color.White;  // сброс подсветки
+                richTextBox1.SelectionBackColor = Color.White;
                 richTextBox1.SelectionStart = m.Index;
-                // начало - место, на котором
-                // в строке найдено регулярное выражение
+
                 richTextBox1.SelectionLength = m.Value.Length;
-                // длина найденного фрагмента
-                richTextBox1.ScrollToCaret();   // прокрутка на выделенное место
-                richTextBox1.SelectionBackColor = Color.Yellow; // подсветка
+                
+                richTextBox1.ScrollToCaret();
+                richTextBox1.SelectionBackColor = Color.Yellow;
                 richTextBox2.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
             }
             for (int i = 0; i < m.Groups.Count; i++)
@@ -78,7 +77,7 @@ namespace Prog_Lab3_5
             {
                 data.Find(textBox1.Text);
                 this.ShowMatch();
-                e.SuppressKeyPress = true; // дальше событие нажатие кнопки игнорируется
+                e.SuppressKeyPress = true;
             }
         }
         private void NextMatch(object sender, EventArgs e)

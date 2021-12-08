@@ -21,7 +21,7 @@ namespace Prog_Lab3_5
                 using (StreamReader sr = new StreamReader(fileName))
                 {
                     FileName = fileName;
-                    Text = sr.ReadToEnd().Replace("\r", "");  //стандартный символ конца строки	
+                    Text = sr.ReadToEnd().Replace("\r", "");
                 }
             }
 
@@ -67,7 +67,7 @@ namespace Prog_Lab3_5
                 }
                 else
                 {
-                    counts[b] = 1; // при чтении было бы исключение «ключ не найден»
+                    counts[b] = 1;
                 }
             }
             return counts;
